@@ -6,7 +6,7 @@ import { Button, TextInput } from 'react-native';
 
 const NotificationAddScreen: React.FC = () => {
   const [newReminder, setNewReminder] = useState('');
-  const { reminders, addReminder } = useReminderStore();
+    const { reminders, addReminder } = useReminderStore();
   
   const handleAddReminder = () => {
     if (newReminder.trim() !== '') {
