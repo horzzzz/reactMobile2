@@ -13,7 +13,6 @@ interface ReminderStore {
 const useReminderStore = create<ReminderStore>((set: SetState<ReminderStore>) => ({
   reminders: [],
   addReminder: (reminder:IReminder) => {
-    console.log("params" ,reminder)
     set((state) => {
       console.log("state",state)
       return{ reminders: [...state.reminders, reminder] }},

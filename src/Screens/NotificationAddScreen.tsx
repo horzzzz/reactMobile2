@@ -13,15 +13,9 @@ const NotificationAddScreen: React.FC = () => {
   const { reminders, addReminder } = useReminderStore();
   
   const handleAddReminder = () => {
-    // if(!isEmpty(reminderName) && !isEmpty(newDate)){
-
         addReminder({name: reminderName, date: newDate.toISOString()});
         setReminderName('');
         setNewDate(new Date());
-    // } else{
-    //   Alert.alert("OSHIBKA")
-    // }
-    
   };
 
   const handleDateChange = (event: any, selectedDate?: Date) => {

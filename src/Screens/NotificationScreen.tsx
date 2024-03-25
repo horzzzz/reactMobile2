@@ -19,8 +19,9 @@ const NotificationScreen: React.FC = () => {
       <Text>Reminders:</Text>
       {reminders.map((reminder, index) => (
          <View key={index}>
-         <Text>{reminder.name}</Text>
-         <Text>{reminder.date.toString()}</Text>
+         {reminders.map((reminder, index) => (
+        <Text key={index}>{reminder.name} - {reminder.date.toString()}</Text>
+      ))}
        </View>
       ))}
     </View>
