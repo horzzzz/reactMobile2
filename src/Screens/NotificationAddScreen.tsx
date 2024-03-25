@@ -40,6 +40,15 @@ const NotificationAddScreen: React.FC = () => {
     })
   }
 
+  const toggleTimePicker = () => {
+    DateTimePickerAndroid.open({
+      value: newDate,
+      mode: "time",
+      display:"default",
+      onChange:handleDateChange
+    })
+  }
+
   return (
     <View style={{ flex: 1 }}>
       <TextInput
@@ -50,6 +59,7 @@ const NotificationAddScreen: React.FC = () => {
       />
       <Text style={{ height: 40, borderColor: 'gray', borderWidth: 1, marginBottom: 10 }}>{newDate.toISOString()}</Text>
       <Button title="Select Date" onPress={toggleDatePicker} />
+      <Button title="Select Time" onPress={toggleTimePicker} />
       <Button title="Add Reminder" onPress={handleAddReminder} />
 
       <Text>Reminders:</Text>
