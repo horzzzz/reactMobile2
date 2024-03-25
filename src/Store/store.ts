@@ -14,7 +14,6 @@ const useReminderStore = create<ReminderStore>((set: SetState<ReminderStore>) =>
   reminders: [],
   addReminder: (reminder:IReminder) => {
     set((state) => {
-      console.log("state",state)
       return{ reminders: [...state.reminders, reminder] }},
 )}}));
 

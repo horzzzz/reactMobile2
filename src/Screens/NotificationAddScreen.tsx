@@ -23,7 +23,7 @@ const NotificationAddScreen: React.FC = () => {
     const currentDate = selectedDate || newDate;
     setNewDate(currentDate);
   };
-  console.log(reminders)
+
 
   const toggleDatePicker = () => {
     DateTimePickerAndroid.open({
