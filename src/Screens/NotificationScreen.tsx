@@ -5,18 +5,23 @@ import useReminderStore from '../Store/store';
 
 const NotificationScreen: React.FC = () => {
   const navigation = useNavigation();
+  const { reminders } = useReminderStore();
 
   const navigateToNotificationAddScreen = () => {
     navigation.navigate('NotificationAddScreen' as never);
   };
-  const { reminders } = useReminderStore();
+
+  
 
   return (
     <View>
       <Button title="Go to ..." onPress={navigateToNotificationAddScreen} />
       <Text>Reminders:</Text>
       {reminders.map((reminder, index) => (
-        <Text key={index}>{reminder}</Text>
+         <View key={index}>
+         <Text>{reminder.name}</Text>
+         <Text>{reminder.date.toString()}</Text>
+       </View>
       ))}
     </View>
   );
