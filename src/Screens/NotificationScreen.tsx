@@ -3,6 +3,7 @@ import { View, Button, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import useReminderStore from '../Store/store';
 import { useState, useEffect } from 'react';
+import { TimerItem } from '../components/TimerItem';
 
 const NotificationScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -28,7 +29,6 @@ const NotificationScreen: React.FC = () => {
       }, 1000);
       intervals.push(interval);
     });
-
     return () => {
       intervals.forEach((interval) => clearInterval(interval));
     };
@@ -40,11 +40,9 @@ const NotificationScreen: React.FC = () => {
     <View>
       <Button title="Go to ..." onPress={navigateToNotificationAddScreen} />
       <Text>Reminders:</Text>
-      
          {reminders.map((reminder, index) => (
-        <Text key={index}>{reminder.name} - {reminder.date.toString()} -{countdowns[index]}</Text>
+        <TimerItem key={reminder.date.toString()} reminder={reminder}/>
       ))}
-       
     </View>
   );
 };

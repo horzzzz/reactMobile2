@@ -4,8 +4,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import NotificationScreen from './src/Screens/NotificationScreen';
 import NotificationAddScreen from './src/Screens/NotificationAddScreen';
 import { Text, View } from 'react-native';
+import { MMKV } from 'react-native-mmkv';
 
-
+export const storage = new MMKV()
 
 
 

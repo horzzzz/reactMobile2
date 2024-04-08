@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { View, Text, Alert } from 'react-native';
+import { View, Text, Alert, StyleSheet, ViewStyle, TextStyle } from 'react-native';
 import useReminderStore from '../Store/store';
 import { useState } from 'react';
 import { Button, TextInput } from 'react-native';
 import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
+import { TimerItem } from '../components/TimerItem';
 const NotificationAddScreen: React.FC = () => {
   const [reminderName, setReminderName] = useState('');
   const [newDate, setNewDate] = useState(new Date());
   const [showDatePicker, setShowDatePicker] = useState(false); 
-
 
   const { reminders, addReminder } = useReminderStore();
   
@@ -57,12 +57,14 @@ const NotificationAddScreen: React.FC = () => {
       <Button title="Add Reminder" onPress={handleAddReminder} />
 
       <Text>Reminders:</Text>
-      {reminders.map((reminder, index) => (
-        <Text key={index}>{reminder.name} - {reminder.date.toString()}</Text>
+      {reminders.map((reminder) => (
+        <TimerItem key={reminder.date.toString()} reminder={reminder}/>
       ))}
     </View>
   );
 };
+
+
 
 
 

@@ -1,6 +1,7 @@
 import  {create, SetState } from 'zustand';
 
-interface IReminder {
+
+export interface IReminder {
   name: string;
   date: Date|string;
 }
